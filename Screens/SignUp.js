@@ -24,7 +24,7 @@ const SignUpScreen = (props) => {
     setTimeout(() => {
       setIsLoding(false);
       props.navigation.navigate('AppEntery')
-      }, 3000);
+      }, 1000);
        
     
   }
