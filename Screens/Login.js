@@ -3,11 +3,14 @@ import { StyleSheet, Text, View ,TextInput,TouchableOpacity} from 'react-native'
 
 const LoginScreen = (props)=> {
 
+  const [Username, setUsername] = useState('');
+
   return (
     <View style={styles.container}>
                <TextInput style={styles.TextInput}
             placeholder='Username'
-
+            value = {Username}
+            onChangeText={(text) =>setUsername(text)}
 
           />
           <TextInput style={styles.TextInput}

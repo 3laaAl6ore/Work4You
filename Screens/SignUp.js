@@ -23,15 +23,13 @@ const SignUpScreen = (props) => {
      setIsLoding(true)
     setTimeout(() => {
       setIsLoding(false);
-      props.navigation.navigate('AppEntery')
+      props.navigation.navigate('AppEntery',{UserName});
       }, 1000);
        
     
   }
   return (
     <View style={styles.container}>
-      <Text> {Phone} </Text>
-
       <TextInput
         style={styles.TextInput}
         placeholder="Username"
@@ -73,7 +71,8 @@ const SignUpScreen = (props) => {
       {isLoding ? (
         <ActivityIndicator size="large" color="#ffcc00" />
       ) : (
-        <TouchableOpacity style={styles.Register} onPress={RegisterAccount}>
+        <TouchableOpacity 
+        style={styles.Register} onPress={RegisterAccount}>
           <Text
             style={{
               textAlign: "center",

@@ -13,18 +13,30 @@ import AppEnteryScreen from "./Screens/AppEntery";
 const Stacknavigator = createStackNavigator();
 export const Nav = () => {
   return (
-    <Stacknavigator.Navigator>
+    <Stacknavigator.Navigator >
       <Stacknavigator.Screen name="Home" component={HomeScreen} />
 
       <Stacknavigator.Screen 
       name="AppEntery" 
       component={AppEnteryScreen} 
-      options = {{header :()=> null}}
+      options = {{
+        header :()=> null,      
+      }}
       />
 
-      <Stacknavigator.Screen name="SignUp" component={SignUpScreen} />
+      <Stacknavigator.Screen 
+      name="SignUp" 
+      component={SignUpScreen}
+      options={{
+        title :'Sign Up',
+      }}
+      />
 
-      <Stacknavigator.Screen name="Login" component={LoginScreen} 
+      <Stacknavigator.Screen 
+      name="Login"
+       component={LoginScreen}
+       options={{headerTitle :'Login'}}
+ 
        />
     </Stacknavigator.Navigator>
   );

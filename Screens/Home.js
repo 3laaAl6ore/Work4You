@@ -66,7 +66,7 @@ const HomeScreen =(props)=> {
               }}
             >
               {" "}
-              Logn In{" "}
+              Login{" "}
             </Text>
           </TouchableOpacity>
         </View>
