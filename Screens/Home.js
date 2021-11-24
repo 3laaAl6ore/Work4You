@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function HomeScreen(props) {
+const HomeScreen =(props)=> {
   return (
     <View style={styles.container}>
       <View style={styles.Top}>
@@ -97,3 +97,5 @@ const styles = StyleSheet.create({
     marginTop: "50%",
   },
 });
+
+export default HomeScreen;
