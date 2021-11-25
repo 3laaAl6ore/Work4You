@@ -1,12 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View ,TextInput,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import HomeScreen from "./Home";
+import LoginScreen from "./Login";
+import SignUpScreen from "./SignUp";
+
+const Tab = createBottomTabNavigator();
 const AppEnteryScreen = (props)=> {
 
   return (
-    <View style={styles.container}>
-        <Text> Welcome</Text>
-       </View>
+    <Tab.Navigator>
+    <Tab.Screen name="signUp" component={HomeScreen} />
+    <Tab.Screen name="Login" component={LoginScreen} />
+  </Tab.Navigator>
   );
 }
 

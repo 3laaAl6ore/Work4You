@@ -29,6 +29,7 @@ export const Nav = () => {
       component={SignUpScreen}
       options={{
         title :'Sign Up',
+        headerBackTitle:'back'
       }}
       />
 

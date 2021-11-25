@@ -1,10 +1,27 @@
 import React,{useState} from 'react';
-import { StyleSheet, Text, View ,TextInput,TouchableOpacity} from 'react-native';
+import {
+   StyleSheet, 
+   Text,
+   View ,
+   TextInput,
+   TouchableOpacity,
+  ActivityIndicator
+  } from 'react-native';
 
 const LoginScreen = (props)=> {
 
   const [Username, setUsername] = useState('');
+  const [Password , setPassword] = useState('');
+  const [isLoding , setIsLoding] = useState(false);
 
+  const VerificationAccount =()=>{
+
+    setIsLoding(true);
+    setTimeout( ()=>{
+      props.navigation.navigate('AppEntery');
+      setIsLoding(false);
+    },2000);
+  }
   return (
     <View style={styles.container}>
                <TextInput style={styles.TextInput}
@@ -18,10 +35,15 @@ const LoginScreen = (props)=> {
               secureTextEntry
           />
 
-          <TouchableOpacity style={styles.Login} 
-          onPress={() =>props.navigation.navigate('AppEntery') }
-          >
+        {
+          isLoding ? (
 
+            <ActivityIndicator size="large" color="#ffcc00" />
+           
+            ):(
+                
+          <TouchableOpacity style={styles.Login} 
+          onPress={VerificationAccount}  >
             <Text style={{
               fontSize:20,
               fontWeight:'bold', 
@@ -29,6 +51,10 @@ const LoginScreen = (props)=> {
             }}> 
             Login </Text>
             </TouchableOpacity>
+          )
+
+        }
+
        </View>
   );
 }

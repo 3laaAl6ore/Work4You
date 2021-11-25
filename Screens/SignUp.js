@@ -24,7 +24,7 @@ const SignUpScreen = (props) => {
     setTimeout(() => {
       setIsLoding(false);
       props.navigation.navigate('AppEntery',{UserName});
-      }, 1000);
+      }, 2000);
        
     
   }
@@ -65,7 +65,8 @@ const SignUpScreen = (props) => {
         style={styles.TextInput}
         placeholder="Phone Number"
         value={Phone}
-        onChangeText={(text) => setPhone(text)}
+       // multiline enabled
+       onChangeText={(text) => setPhone(text)}
       />
 
       {isLoding ? (
