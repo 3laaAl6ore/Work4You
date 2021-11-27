@@ -1,5 +1,5 @@
 import React ,{useState}from 'react';
-import { StyleSheet , View ,FlatList,Text} from 'react-native';
+import { StyleSheet , View ,FlatList,Text,SafeAreaView} from 'react-native';
 
 
 const indexScreen =()=>{
@@ -66,7 +66,8 @@ const fakeTaskData= [
 ];
 
 return (
-  <View style={styles.container}>
+  <SafeAreaView style={styles.container}>
+    <Text style={{fontSize:25,fontWeight:'bold'}}> Last Tasks In Your Area </Text>
     <FlatList
       style={{ width: "100%" }}
       data={fakeTaskData}
@@ -93,7 +94,7 @@ return (
         //</TouchableOpacity>
       )}
     />
-  </View>
+  </SafeAreaView>
 );
 
 }
@@ -101,13 +102,13 @@ return (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#00cc99",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
   },
   taskTitle: {
-    color: 'black',
+    color: '#3746D1',
     fontWeight: "bold",
     fontSize: 20,
   },

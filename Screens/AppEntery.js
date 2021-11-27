@@ -11,7 +11,11 @@ const AppEnteryScreen = (props)=> {
 
   return (
     <Tab.Navigator>
-    <Tab.Screen name="index" component={indexScreen} 
+    <Tab.Screen 
+    name="index" 
+    component={indexScreen} 
+    options = {{
+      header :()=> null,}}
 
     />
     <Tab.Screen name="Login" component={LoginScreen} />
