@@ -6,28 +6,26 @@ import {
   TextInput,
   TouchableOpacity,
   ActivityIndicator,
+  KeyboardAvoidingView
 } from "react-native";
 
 const SignUpScreen = (props) => {
-  const [UserName, setUserName] = useState('');
-  const [Password, setPassward] = useState('');
-  const [ConformPassword, setConformPassword] = useState('');
-  const [Email, setEmail] = useState('');
-  const [Phone, setPhone] = useState('');
+  const [UserName, setUserName] = useState("");
+  const [Password, setPassward] = useState("");
+  const [ConformPassword, setConformPassword] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
 
   const [isLoding, setIsLoding] = useState(false);
 
   // Register Function
-  const RegisterAccount =async ()=>{
-    
-     setIsLoding(true)
+  const RegisterAccount = async () => {
+    setIsLoding(true);
     setTimeout(() => {
       setIsLoding(false);
-      props.navigation.navigate('AppEntery',{UserName});
-      }, 2000);
-       
-    
-  }
+      props.navigation.navigate("AppEntery", { UserName });
+    }, 2000);
+  };
   return (
     <View style={styles.container}>
       <TextInput
@@ -65,19 +63,18 @@ const SignUpScreen = (props) => {
         style={styles.TextInput}
         placeholder="Phone Number"
         value={Phone}
-       // multiline enabled
-       onChangeText={(text) => setPhone(text)}
+        // multiline enabled
+        onChangeText={(text) => setPhone(text)}
       />
 
       {isLoding ? (
         <ActivityIndicator size="large" color="#ffcc00" />
       ) : (
-        <TouchableOpacity 
-        style={styles.Register} onPress={RegisterAccount}>
+        <TouchableOpacity style={styles.Register} onPress={RegisterAccount}>
           <Text
             style={{
               textAlign: "center",
-              fontWeight:'700',
+              fontWeight: "700",
               fontSize: 20,
             }}
           >

@@ -7,25 +7,13 @@ import HomeScreen from "./Screens/Home";
 import LoginScreen from "./Screens/Login";
 import SignUpScreen from "./Screens/SignUp";
 import AppEnteryScreen from "./Screens/AppEntery";
-import testScreen from "./Screens/testScreen";
 //3
 
 const Stacknavigator = createStackNavigator();
 export const Nav = () => {
   return (
     <Stacknavigator.Navigator >
-
     <Stacknavigator.Screen 
-    name="testScreen" 
-    component={testScreen}
-    options = {{
-      header :()=> null,      
-    }}
-    />
-
-
-      <Stacknavigator.Screen name="Home" component={HomeScreen} />
-      <Stacknavigator.Screen 
       name="AppEntery" 
       component={AppEnteryScreen} 
       options = {{
@@ -33,6 +21,15 @@ export const Nav = () => {
       }}
       />
 
+<Stacknavigator.Screen
+ name="Home"
+  component={HomeScreen}
+  options = {{
+    header :()=> null,      
+  }} 
+  />
+
+  
       <Stacknavigator.Screen 
       name="SignUp" 
       component={SignUpScreen}

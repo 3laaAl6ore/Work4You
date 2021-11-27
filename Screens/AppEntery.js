@@ -4,15 +4,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from "./Home";
 import LoginScreen from "./Login";
-import SignUpScreen from "./SignUp";
+import indexScreen from "./index";
 
 const Tab = createBottomTabNavigator();
 const AppEnteryScreen = (props)=> {
 
   return (
     <Tab.Navigator>
-    <Tab.Screen name="signUp" component={HomeScreen} />
+    <Tab.Screen name="index" component={indexScreen} 
+
+    />
     <Tab.Screen name="Login" component={LoginScreen} />
+
   </Tab.Navigator>
   );
 }

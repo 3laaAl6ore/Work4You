@@ -3,36 +3,76 @@ import {
   StyleSheet,
   Text,
   View,
+  ImageBackground,
   TouchableOpacity,
 } from "react-native";
+import backimage from "../assets/backimage.png";
 
-const HomeScreen =(props)=> {
+const HomeScreen = (props) => {
   return (
     <View style={styles.container}>
-      <View style={styles.Top}>
-        <Text style={styles.Welcome}>Welcome To Work4You</Text>
-      </View>
-      <View style={styles.Down}>
-        <View style={{ alignItems: "center" }}>
+      <View style={{ height: "70%" }}>
+        <ImageBackground style={styles.BackgroundImage} source={backimage}>
           <Text
             style={{
-              textAlign: "center",
-              paddingVertical: "2%",
+              marginTop: "40%",
               fontWeight: "bold",
-              fontSize: 19,
+              fontSize: 70,
+              color: "grey",
             }}
           >
             {" "}
-            New Here ?{" "}
+            Find{" "}
           </Text>
-
-          <TouchableOpacity
+          <Text
             style={{
-              backgroundColor: "#faaa",
-              width: "50%",
-              borderRadius: 25,
+              fontWeight: "bold",
+              fontSize: 20,
+              color: "white",
             }}
-            onPress={() => {props.navigation.navigate('SignUp' , {name:'Alaa' , email:'aaa@gmail.com'})}}
+          >
+            Quick and Safe
+          </Text>
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 36,
+              color: "grey",
+            }}
+          >
+            JOP
+          </Text>
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 36,
+              color: "white",
+            }}
+          >
+            In Your
+          </Text>
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 36,
+              color: "grey",
+            }}
+          >
+            Area
+          </Text>
+        </ImageBackground>
+      </View>
+
+      <View style={styles.Down}>
+        <View style={{ alignItems: "center", paddingVertical: 20 }}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              props.navigation.navigate("SignUp", {
+                name: "Alaa",
+                email: "aaa@gmail.com",
+              });
+            }}
           >
             <Text
               style={{
@@ -48,14 +88,10 @@ const HomeScreen =(props)=> {
           </TouchableOpacity>
         </View>
 
-        <View style={{ alignItems: "center", paddingVertical: "8%" }}>
+        <View style={{ alignItems: "center" }}>
           <TouchableOpacity
-            style={{
-              backgroundColor: "#faaa",
-              width: "50%",
-              borderRadius: 25,
-            }}
-            onPress={() =>props.navigation.navigate('Login') }
+            style={styles.btn}
+            onPress={() => props.navigation.navigate("Login")}
           >
             <Text
               style={{
@@ -73,28 +109,29 @@ const HomeScreen =(props)=> {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "skyblue",
   },
-  Top: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   Down: {
     flex: 1,
+    height: "30%",
     backgroundColor: "white",
     borderRadius: 1.5,
   },
 
-  Welcome: {
-    fontWeight: "bold",
-    fontSize: 22,
-    marginTop: "50%",
+  BackgroundImage: {
+    width: "100%",
+    height: "100%",
+  },
+  btn: {
+    backgroundColor: "#faaa",
+    width: "70%",
+    borderRadius: 25,
+    alignItems: "center",
   },
 });
 
