@@ -6,7 +6,6 @@ import {
   TextInput,
   TouchableOpacity,
   ActivityIndicator,
-  KeyboardAvoidingView
 } from "react-native";
 
 const SignUpScreen = (props) => {

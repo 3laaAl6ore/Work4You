@@ -7,21 +7,31 @@ import HomeScreen from "./Screens/Home";
 import LoginScreen from "./Screens/Login";
 import SignUpScreen from "./Screens/SignUp";
 import AppEnteryScreen from "./Screens/AppEntery";
+import TasksDetalisScreen from "./Screens/TaskDetalis";
+
 //3
 
 const Stacknavigator = createStackNavigator();
 export const Nav = () => {
   return (
-    <Stacknavigator.Navigator >
-    <Stacknavigator.Screen 
+    <Stacknavigator.Navigator initialRouteName='Home' >
+
+<Stacknavigator.Screen 
+      name="TaskDetalis" 
+      component={TasksDetalisScreen} 
+      options = {{
+        header :()=> null,      
+      }}
+      />
+
+<Stacknavigator.Screen 
       name="AppEntery" 
       component={AppEnteryScreen} 
       options = {{
         header :()=> null,      
       }}
       />
-
-<Stacknavigator.Screen
+  <Stacknavigator.Screen
  name="Home"
   component={HomeScreen}
   options = {{
@@ -29,7 +39,7 @@ export const Nav = () => {
   }} 
   />
 
-  
+
       <Stacknavigator.Screen 
       name="SignUp" 
       component={SignUpScreen}
