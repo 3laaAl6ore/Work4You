@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   ActivityIndicator,
+  KeyboardAvoidingView
 } from "react-native";
 
 const SignUpScreen = (props) => {
@@ -26,7 +27,8 @@ const SignUpScreen = (props) => {
     }, 2000);
   };
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView behavior={"padding"}
+    style={styles.container}>
       <TextInput
         style={styles.TextInput}
         placeholder="Username"
@@ -81,7 +83,7 @@ const SignUpScreen = (props) => {
           </Text>
         </TouchableOpacity>
       )}
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

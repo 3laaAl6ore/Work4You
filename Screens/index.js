@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 
 const indexScreen = (props) => {
   const fakeTaskData = [
@@ -81,18 +81,15 @@ const indexScreen = (props) => {
 
   return (
     <SafeAreaView style={styles.container}>
-            <Ionicons name="md-checkmark-circle" size={32} color="green" />
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
 
       <Text style={{ fontSize: 25, fontWeight: "bold" }}>
         {" "}
         Last Tasks In Your Area{" "}
       </Text>
-      <View style={{ width: "100%",flexDirection: "row", marginTop: 15 }}>
+      <View style={{ width: "100%", flexDirection: "row", marginTop: 15 }}>
         <Icon name="ios-search" color="black" size={30} />
-        <TextInput 
-         placeholder="Search"
-          placeholderTextColor = 'skyblue'  
-         />
+        <TextInput placeholder="Search" placeholderTextColor="skyblue" />
       </View>
 
       <FlatList
@@ -100,27 +97,36 @@ const indexScreen = (props) => {
         data={fakeTaskData}
         keyExtractor={(item) => item.id}
         renderItem={(taskItem) => (
-          <TouchableOpacity onPress={()=>{ props.navigation.navigate('TaskDetalis' ,{ taskDList: taskItem.item})}}>
-          <View
-            style={{
-              backgroundColor: "white",
-              width: "100%",
-              padding: 16,
-              marginBottom: 10,
-              borderRadius: 15,
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("TaskDetalis", {
+                taskDList: taskItem.item,
+              });
             }}
           >
-            <Text style={styles.taskTitle}> {taskItem.item.taskTitle} </Text>
-            <Text style={styles.TheTaskOwner}>
-              {" "}
-              {taskItem.item.TheTaskOwner} {taskItem.item.WhenTheTaskAded}{" "}
-              {taskItem.item.price}$
-            </Text>
-            <Text style={styles.TaskDiscription}>
-              {" "}
-              {taskItem.item.TaskDiscription}
-            </Text>
-          </View>
+            <View
+              style={{
+                backgroundColor: "white",
+                width: "100%",
+                padding: 9,
+                borderRadius: 15,
+              }}
+            >
+          <Text style={styles.taskTitle}> {taskItem.item.taskTitle} </Text>
+
+          <View style={{flexDirection: 'row',}}>
+
+          <Text style={styles.InlineInfo}><Icon name="person" color="black" size={12} /> {taskItem.item.TheTaskOwner}</Text>
+          <Text style={styles.InlineInfo}><Icon name="alarm-sharp" color="black" size={12} /> {taskItem.item.WhenTheTaskAded}</Text>
+          <Text style={styles.InlineInfo}>${taskItem.item.price}</Text>
+                </View>
+              
+              <Text style={styles.TaskDiscription}>
+                {" "}
+                {taskItem.item.TaskDiscription}
+              </Text>
+              <View style={{width: "100%" , backgroundColor:'#D5CDCD',height:1}}></View>
+            </View>
           </TouchableOpacity>
         )}
       />
@@ -135,21 +141,21 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 16,
   },
   taskTitle: {
     color: "#3746D1",
     fontWeight: "bold",
     fontSize: 20,
   },
-  TheTaskOwner: {
-    color: "black",
+  InlineInfo: {
+    color: "grey",
     fontWeight: "100",
     fontSize: 16,
+    marginLeft:12
   },
   TaskDiscription: {
     color: "black",
-    fontWeight: "400",
+    fontWeight: "600",
     fontSize: 17,
   },
 });
