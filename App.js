@@ -1,7 +1,7 @@
 import React ,{useState}from 'react';
 import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import {Nav} from './navigation';
+import {Nav} from './src/navigation/navigation';
 
 
 export default function App() {

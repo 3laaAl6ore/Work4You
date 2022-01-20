@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
-  View,
   TextInput,
   TouchableOpacity,
   ActivityIndicator,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
 } from "react-native";
+
+import { authentication } from "../../../Fire_base/firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUpScreen = (props) => {
   const [UserName, setUserName] = useState("");
@@ -19,16 +21,18 @@ const SignUpScreen = (props) => {
   const [isLoding, setIsLoding] = useState(false);
 
   // Register Function
-  const RegisterAccount = async () => {
-    setIsLoding(true);
-    setTimeout(() => {
-      setIsLoding(false);
-      props.navigation.navigate("AppEntery", { UserName });
-    }, 2000);
+  const RegisterAccount = () => {
+    createUserWithEmailAndPassword(authentication, Email, Password)
+      .then((result) => {
+        console.log(result);
+        props.navigation.navigate("AppEntery", { userData: result });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
-    <KeyboardAvoidingView behavior={"padding"}
-    style={styles.container}>
+    <KeyboardAvoidingView behavior={"padding"} style={styles.container}>
       <TextInput
         style={styles.TextInput}
         placeholder="Username"

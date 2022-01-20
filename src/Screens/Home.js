@@ -6,7 +6,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import backimage from "../assets/backimage.png";
+import backimage from "../../assets/backimage.png";
 
 const HomeScreen = (props) => {
   return (
