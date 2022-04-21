@@ -124,10 +124,11 @@ const indexScreen = (props) => {
           flexDirection: "row",
           //marginTop: 15,
           //paddingBottom: 6,
-          //paddingLeft: 6,
+         // padding: 6,
           //borderBottomWidth: 0.25,
           borderBottomColor: "#CCFF",
           alignContent: "center",
+
         }}
       >
         <Icon name="ios-search" color="black" size={30} />
@@ -162,28 +163,16 @@ const indexScreen = (props) => {
             Search
           </Text>
         </TouchableOpacity>
-        <View
-          style={{
-            width: "23%",
-            paddingLeft: 26,
-            backgroundColor: "#DDC",
-          }}
-        >
+          <TouchableOpacity
+          style={styles.btn}
+          >
           <RNPicker
-            style={{
-              width: 90,
-              backgroundColor: "#CA1",
-              fontSize: 17,
-              paddingHorizontal: 10,
-              paddingVertical: 10,
-              borderRadius: 8,
-              color: "black",
-              marginLeft: 5,
-            }}
             items={musicTypes}
             onValueChange={(val) => setTaskTypesValue(val)}
           />
-        </View>
+          </TouchableOpacity>
+          
+  
       </View>
       <FlatList
         style={{ width: "100%" }}
@@ -257,5 +246,9 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 17,
   },
+  btn:{
+    backgroundColor: "#CEF0",
+    width: "10%",
+  }
 });
 export default indexScreen;

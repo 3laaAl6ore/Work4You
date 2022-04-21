@@ -16,7 +16,7 @@ import TasksDetalisScreen, {
 const Stacknavigator = createStackNavigator();
 export const Nav = () => {
   return (
-    <Stacknavigator.Navigator initialRouteName="AppEntery">
+    <Stacknavigator.Navigator initialRouteName="Home">
       <Stacknavigator.Screen
         name="TaskDetalis"
         component={TasksDetalisScreen}

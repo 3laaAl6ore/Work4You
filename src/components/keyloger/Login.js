@@ -18,7 +18,7 @@ const LoginScreen = (props) => {
     signInWithEmailAndPassword(authentication, Username, Password)
       .then((result) => {
         //console.log(result);
-        props.navigation.navigate("AppEntery", { userData: result });
+        props.navigation.navigate("AppEntery");
       })
       .catch((err) => {
         console.log(err);
